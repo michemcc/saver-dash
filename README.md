@@ -38,23 +38,27 @@ To deploy/test the application, run the below (on a windows machine, for example
 
    ```bash
    python -m venv venv
-   venv\\Scripts\\activate.bat
+   venv\Scripts\activate.bat
    python -m pip install --upgrade pip
-   pip install -r backend/requirements.txt
+   cd backend
+   pip install -r backend\requirements.txt
    # Generate a secret key
    python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
    python manage.py migrate
-   # Run the django backend server
+
+3. Run the django backend server
+   ```bash
    python manage.py runserver
    ```
 
-3. Install dependencies for the react frontend:
+4. Install dependencies for the react frontend:
 
    ```bash
+   cd ..
    npm install
    ```
 
-4. Start the development server:
+5. Start the development server:
 
    ```bash
    npm run dev
