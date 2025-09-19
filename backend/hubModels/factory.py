@@ -14,10 +14,8 @@ duration_type_provider = DynamicProvider(
     elements=["DAYS", "WEEKS", "MONTHS", "YEARS"],
 )
 
-
 def get_and_pop(kwarg, key):
     return kwarg.pop(key) if kwarg.get(key) else None
-
 
 class TransactionFactory:
     def __init__(self) -> None:
@@ -90,5 +88,3 @@ class TransactionFactory:
     def create_transaction_from_json(data, user_pk):
         transaction = Transaction.create_from_json(data, user_pk)
         return transaction
-    
-    

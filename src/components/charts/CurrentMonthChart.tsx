@@ -18,7 +18,7 @@ import {
 } from "../../enums/Enums";
 import { useTransactions } from "../../hooks/api/useTransactions";
 import { Transaction } from "../../models/Transaction";
-import { darkTheme } from "../../theme";
+import { lightTheme } from "../../theme";
 import { barRangeOptionMask, getStartDate } from "../../utils/utils";
 
 function CurrentMonthChart() {
@@ -54,7 +54,7 @@ function CurrentMonthChart() {
             columnWidth: "70%",
           },
         },
-        colors: [darkTheme.palette.primary.main],
+        colors: [lightTheme.palette.primary.main],
         legend: {
           show: false,
         },
@@ -128,7 +128,7 @@ function CurrentMonthChart() {
   return (
     <Box
       border="1px solid"
-      borderColor={darkTheme.palette.background.paper}
+      borderColor={lightTheme.palette.background.paper}
       borderRadius={2}
       padding={3}
       height={380}

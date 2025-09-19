@@ -1,12 +1,9 @@
 import datetime
-
 from _decimal import Decimal
 from dateutil.relativedelta import relativedelta
 from django.test import TestCase
 from .factory import TransactionFactory
-
 from .models import Transaction
-
 
 class TransactionTestCase(TestCase):
     STARTER_WALLET_AMOUNT = 1000

@@ -7,9 +7,9 @@ import {
 
 export function formatValue(value: number, limit: number): string {
   if (value < limit) {
-    return parseFloat(value.toString()).toLocaleString("pt-BR", {
+    return parseFloat(value.toString()).toLocaleString("pt-US", {
       style: "currency",
-      currency: "BRL",
+      currency: "USD",
     });
   }
 
@@ -22,7 +22,7 @@ export function formatValue(value: number, limit: number): string {
   }
 
   return value
-    ? "R$" + value.toFixed(2) + abbreviations[abbreviationIndex]
+    ? "$" + value.toFixed(2) + abbreviations[abbreviationIndex]
     : "";
 }
 

@@ -9,7 +9,6 @@ from .managers import HubUserManager, TransactionsManager, TransactionsQueryset
 from datetime import date, datetime, timedelta
 from dateutil.relativedelta import relativedelta
 
-
 class HubUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField('email address', unique=True)
     first_name = models.CharField('first name', max_length=30, blank=True)

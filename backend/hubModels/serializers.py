@@ -6,7 +6,6 @@ from django.utils import timezone
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer, TokenRefreshSerializer
 from rest_framework_simplejwt.exceptions import InvalidToken
 
-
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
     def get_token(cls, user):
@@ -18,7 +17,6 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 
         return token
 
-
 class MyTokenRefreshSerializer(TokenRefreshSerializer):
     refresh = None
     def validate(self, attrs):
@@ -28,12 +26,10 @@ class MyTokenRefreshSerializer(TokenRefreshSerializer):
         else:
             raise InvalidToken('No valid token found in cookie \'refresh_token\'')
 
-
 class LabelSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomLabel
         fields = ('id', 'name', 'color')
-
 
 class WalletSerializer(serializers.ModelSerializer):
     monthly_earnings = serializers.SerializerMethodField(source='get_monthly_earnings')
@@ -51,7 +47,6 @@ class WalletSerializer(serializers.ModelSerializer):
     @staticmethod
     def get_monthly_expenses(obj):
         return obj.get_monthly_expenses()
-
 
 class TransactionSerializer(serializers.ModelSerializer):
     date = serializers.DateField(format="%m-%d-%Y", input_formats=['%m-%d-%Y'])
@@ -75,7 +70,6 @@ class TransactionSerializer(serializers.ModelSerializer):
         if obj.recurrent:
             return None
         return None
-
 
 class SavingPlanSerializer(serializers.ModelSerializer):
     # days_to_end_goal = serializers.SerializerMethodField('get_days_to_end_goal')
