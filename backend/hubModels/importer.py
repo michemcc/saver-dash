@@ -4,7 +4,7 @@ from pypdf import PdfReader
 from typing import Dict
 
 class InvoiceProcessingException(Exception):
-    message = 'Invoice importing was not successful. Are you sure you chose the correct bank institution?'
+    message = 'Invoice import was not successful. Are you sure you chose the correct bank institution?'
 
 class PDFInvoiceImporter:
     def __init__(self, file_path, institution):
@@ -56,10 +56,10 @@ class SantanderInvoiceProcessor(InvoiceProcessor):
     def generate_dict(self, text, invoice_dict):
         chunks = text.split('\n')
         try:
-            if (index_value := chunks.index('Valor pago')) != -1:
+            if (index_value := chunks.index('Payment amount')) != -1:
                 invoice_dict['value'] = chunks[index_value + 1]
 
-            if (index_date := chunks.index('Data e hora da transação')) != -1:
+            if (index_date := chunks.index('Date and time')) != -1:
                 invoice_dict['date'] = chunks[index_date + 1]
         except ValueError:
             raise InvoiceProcessingException()
@@ -70,10 +70,10 @@ class BancoDoBrasilInvoiceProcessor(InvoiceProcessor):
     def generate_dict(self, text, invoice_dict):
         chunks = text.split('\n')
         for chunk in chunks:
-            if chunk.split()[0] == 'VALOR:':
+            if chunk.split()[0] == 'AMOUNT:':
                 invoice_dict['value'] = float(chunk.split()[1].replace(',', '.'))
 
-            if chunk.split()[0] == 'DATA:':
+            if chunk.split()[0] == 'DATE:':
                 invoice_dict['date'] = chunk.split()[1]
 
         return invoice_dict
