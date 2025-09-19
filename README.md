@@ -44,6 +44,8 @@ To deploy/test the application, run the below (on a windows machine, for example
    # Generate a secret key
    python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
    python manage.py migrate
+   # Run the django backend server
+   python manage.py runserver
    ```
 
 3. Install dependencies for the react frontend:

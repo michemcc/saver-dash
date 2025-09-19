@@ -18,7 +18,7 @@ import {
 } from "../../enums/Enums";
 import { useTransactions } from "../../hooks/api/useTransactions";
 import { AggregatedExpense } from "../../models/Transaction";
-import { darkTheme } from "../../theme";
+import { lightTheme } from "../../theme";
 import { getStartDate, pieRangeOptionMask } from "../../utils/utils";
 
 function ProfileChart() {
@@ -93,7 +93,7 @@ function ProfileChart() {
   return (
     <Box
       border="1px solid"
-      borderColor={darkTheme.palette.background.paper}
+      borderColor={lightTheme.palette.background.paper}
       borderRadius={2}
       padding={3}
       height={380}

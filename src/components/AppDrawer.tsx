@@ -6,7 +6,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import { darkTheme } from "../theme";
+import { lightTheme } from "../theme";
 import { navigation } from "../navigation";
 import { AppBar, Box, Drawer, Toolbar, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -30,7 +30,7 @@ export default function DrawerAppBar(props: Props) {
       onClick={handleDrawerToggle}
       sx={{
         textAlign: "center",
-        background: darkTheme.palette.background.default,
+        background: lightTheme.palette.background.default,
       }}
     >
       <Typography
@@ -62,8 +62,8 @@ export default function DrawerAppBar(props: Props) {
       <AppBar
         component="nav"
         sx={{
-          background: darkTheme.palette.background.default,
-          borderBottom: `1px solid ${darkTheme.palette.background.paper}`,
+          background: lightTheme.palette.background.default,
+          borderBottom: `1px solid ${lightTheme.palette.background.paper}`,
         }}
       >
         <Toolbar
@@ -98,7 +98,7 @@ export default function DrawerAppBar(props: Props) {
               sx={{
                 display: { xs: "none", xl: "flex" },
                 justifyContent: "center",
-                borderColor: darkTheme.palette.background.paper,
+                borderColor: lightTheme.palette.background.paper,
                 height: "30px",
                 p: 2,
                 mr: 2,
@@ -161,7 +161,7 @@ export default function DrawerAppBar(props: Props) {
             keepMounted: true,
           }}
           PaperProps={{
-            style: { background: darkTheme.palette.background.default },
+            style: { background: lightTheme.palette.background.default },
           }}
           sx={{
             display: { xs: "block", sm: "none" },

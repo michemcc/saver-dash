@@ -5,7 +5,7 @@ import { Box, Grid, IconButton, Skeleton, Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { useState } from "react";
 import { Wallet } from "../../models/Wallet";
-import { darkTheme } from "../../theme";
+import { lightTheme } from "../../theme";
 import { formatValue } from "../../utils/utils";
 import EditBalanceForm from "../forms/EditBalanceForm";
 
@@ -23,7 +23,7 @@ function WalletGridRow(props: Props) {
       <Grid item xs={12} lg={4}>
         <Box
           border="1px solid"
-          borderColor={darkTheme.palette.background.paper}
+          borderColor={lightTheme.palette.background.paper}
           borderRadius={2}
           padding={3}
           height={"100%"}
@@ -106,7 +106,7 @@ function WalletGridRow(props: Props) {
       <Grid item xs={12} sm={6} lg={4}>
         <Box
           border="1px solid"
-          borderColor={darkTheme.palette.background.paper}
+          borderColor={lightTheme.palette.background.paper}
           borderRadius={2}
           padding={3}
           height={"100%"}
@@ -141,7 +141,7 @@ function WalletGridRow(props: Props) {
       <Grid item xs={12} sm={6} lg={4}>
         <Box
           border="1px solid"
-          borderColor={darkTheme.palette.background.paper}
+          borderColor={lightTheme.palette.background.paper}
           borderRadius={2}
           padding={3}
           height={"100%"}
