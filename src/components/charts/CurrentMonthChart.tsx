@@ -94,7 +94,7 @@ function CurrentMonthChart() {
         },
         dataLabels: { enabled: false },
         tooltip: {
-          theme: "dark",
+          theme: "light",
           x: {
             formatter(val) {
               return String(val);

@@ -5,6 +5,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import { grey } from "@mui/material/colors";
 import { useSearchParams } from "react-router-dom";
 import NewInvoiceForm from "../forms/NewInvoiceForm";
 
@@ -28,7 +29,7 @@ export default function ImportInvoice() {
       open={isOpen}
       onClose={closeModal}
       PaperProps={{
-        style: { background: "#0d0d0d" },
+        style: { background: grey[100] },
       }}
     >
       <DialogTitle>Bulk import invoices</DialogTitle>

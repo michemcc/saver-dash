@@ -74,7 +74,7 @@ function NewTransactionForm() {
       queryClient.invalidateQueries({
         queryKey: ["wallet"],
       });
-      enqueueSnackbar("Transaction created successfully!", {
+      enqueueSnackbar("Transaction created successfully", {
         variant: "success",
         autoHideDuration: 3000,
         anchorOrigin: { horizontal: "right", vertical: "bottom" },
@@ -103,6 +103,7 @@ function NewTransactionForm() {
         gap: 20,
         width: "500px",
         marginTop: 20,
+        backgroundColor: grey[100],
       }}
     >
       <Controller
@@ -188,7 +189,7 @@ function NewTransactionForm() {
               InputProps={{
                 style: { fontSize: "14px", height: "40px" },
                 startAdornment: (
-                  <InputAdornment position="start">R$</InputAdornment>
+                  <InputAdornment position="start">$</InputAdornment>
                 ),
               }}
             />
@@ -225,7 +226,7 @@ function NewTransactionForm() {
         render={({ field: { onChange, value, name } }) => (
           <FormControl>
             <FormLabel
-              sx={{ mb: 1, "&.Mui-disabled": { color: "white" } }}
+              sx={{ mb: 1, "&.Mui-disabled": { color: "black" } }}
               disabled={true}
             >
               Type
@@ -244,7 +245,7 @@ function NewTransactionForm() {
                     control={<Radio />}
                     label={typeOptionMask(item)}
                     sx={{
-                      backgroundColor: grey[900],
+                      backgroundColor: grey[300],
                       p: 1,
                       m: 0.5,
                       borderRadius: 2,

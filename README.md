@@ -43,7 +43,7 @@ To deploy/test the application, run the below (on a windows machine, for example
    venv\Scripts\activate.bat
    python -m pip install --upgrade pip
    cd backend
-   pip install -r backend\requirements.txt
+   pip install -r requirements.txt
    # Generate a secret key
    python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
    python manage.py migrate
