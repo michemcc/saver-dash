@@ -91,6 +91,7 @@ function NewTransactionForm() {
       style={{
         display: "flex",
         flexDirection: "column",
+        backgroundColor: grey[100],
         gap: 20,
         width: "500px",
         marginTop: 10,
@@ -169,9 +170,9 @@ function NewTransactionForm() {
         render={({ field: { onChange, value, name } }) => (
           <FormControl>
             <FormLabel
-              sx={{ mb: 1, "&.Mui-disabled": { color: "white" } }}
+              sx={{ mb: 1, "&.Mui-disabled": { color: "black" } }}
               disabled={true}
-              about="teste"
+              about="test"
             >
               Type
             </FormLabel>
@@ -189,7 +190,7 @@ function NewTransactionForm() {
                     control={<Radio />}
                     label={typeOptionMask(item)}
                     sx={{
-                      backgroundColor: grey[900],
+                      backgroundColor: grey[300],
                       p: 1,
                       m: 0.5,
                       borderRadius: 2,

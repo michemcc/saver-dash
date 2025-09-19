@@ -111,7 +111,7 @@ function NewLabelForm() {
                 size="small"
                 type="color"
                 fullWidth
-                sx={{ borderColor: grey[800], maxHeight: "32px" }}
+                sx={{ borderColor: grey[300], maxHeight: "32px" }}
               />
             </>
           )}

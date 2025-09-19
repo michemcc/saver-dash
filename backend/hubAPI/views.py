@@ -20,7 +20,6 @@ from hubModels.importer import PDFInvoiceImporter, InvoiceProcessingException
 from django.conf import settings
 from django.db.models.functions import TruncDate
 
-
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
 
@@ -39,7 +38,6 @@ class MyTokenObtainPairView(TokenObtainPairView):
             )
             del response.data['refresh']
         return super().finalize_response(request, response, *args, **kwargs)
-
 
 class MyTokenRefreshView(TokenRefreshView):
     serializer_class = MyTokenRefreshSerializer
@@ -75,7 +73,6 @@ class MyTokenRefreshView(TokenRefreshView):
             del response.data['refresh']
         return super().finalize_response(request, response, *args, **kwargs)
 
-
 class WalletAPIView(APIView):
     permission_classes = (IsAuthenticated,)
     serializer_class = WalletSerializer
@@ -100,7 +97,6 @@ class WalletAPIView(APIView):
         wallet.set_balance(value)
 
         return custom_success_response("Wallet's balance successfully updated!")
-
 
 class TransactionAPIView(APIView):
     permission_classes = (IsAuthenticated,)
@@ -130,7 +126,6 @@ class TransactionAPIView(APIView):
         transaction.delete()
 
         return custom_success_response("Transaction deleted with success!")
-
 
 class LabelAPIView(APIView):
     permission_classes = (IsAuthenticated,)
@@ -167,7 +162,6 @@ class LabelAPIView(APIView):
         label.delete()
 
         return custom_success_response("Label deleted with success!")
-
 
 class ImportInvoicesAPIView(APIView):
     permission_classes = (IsAuthenticated,)
@@ -211,7 +205,6 @@ class ImportInvoicesAPIView(APIView):
 
         return custom_success_response('Invoices were successfully imported. Please finish updating your transactions.')
 
-
 @api_view(['GET'])
 def get_routes(request):
     routes = [
@@ -226,14 +219,12 @@ def get_routes(request):
 
     return Response(routes)
 
-
 @api_view(['POST'])
 # @permission_classes([IsAuthenticated])
 def create_user(request):
     data = request.data
     user = HubUser.create_from_json(data)
     return Response("ok")
-
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
@@ -244,7 +235,6 @@ def get_saving_plans(request):
     saving_plans_serialized = SavingPlanSerializer(saving_plans, many=True)
 
     return Response(saving_plans_serialized.data)
-
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
