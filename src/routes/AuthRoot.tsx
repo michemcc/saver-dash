@@ -18,7 +18,7 @@ function AuthRoot() {
         }}
       >
         <Typography variant="h6" component="h1" p={5} fontWeight={600}>
-          saver-dash
+          Saver Dash 
         </Typography>
         <Box p={5} sx={{ display: "flex", alignItems: "center", gap: 2 }}>
           <Link href="https://github.com/michemcc" variant="body2" sx={{ color: grey[800], "&:hover": { color: grey[700] } }}>

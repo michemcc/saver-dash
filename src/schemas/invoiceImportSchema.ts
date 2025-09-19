@@ -15,7 +15,7 @@ export const newInvoiceImportSchema = z
       )
       .refine(
         (files) => ACCEPTED_DOC_TYPES.includes(files?.[0]?.type),
-        "Only .PDF files are accepted."
+        "Only .pdf files are accepted."
       ),
     institution: z
       .nativeEnum(BankInstitutions)
