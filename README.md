@@ -100,5 +100,5 @@ export default {
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 
 
-    Michael McCarthy <michemcc@outlook.com>
-    https://www.linkedin.com/in/michemcc/
+   Michael McCarthy <michemcc@outlook.com>
+   https://www.linkedin.com/in/michemcc/
