@@ -7,7 +7,7 @@ import {
 
 export function formatValue(value: number, limit: number): string {
   if (value < limit) {
-    return parseFloat(value.toString()).toLocaleString("pt-US", {
+    return parseFloat(value.toString()).toLocaleString("en-us", {
       style: "currency",
       currency: "USD",
     });

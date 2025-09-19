@@ -8,7 +8,7 @@ export const newTransactionFormSchema = z.object({
     .string()
     .min(1, "Please select an amount >= 1.")
     .transform((value) => {
-      return parseFloat(value.replace(/\./g, "").replace(",", "."));
+      return parseFloat(value.replace(/\./g, "").replace(".", ","));
     }),
   label: z.object({
     id: z.number(),

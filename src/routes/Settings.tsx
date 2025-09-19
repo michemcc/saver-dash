@@ -27,16 +27,16 @@ function Settings() {
         <nav>
           <List>
             <ListItem>
-              <ListItemButton style={{ color: grey[500] }}>
-                <ListItemIcon style={{ color: grey[500] }}>
+              <ListItemButton style={{ color: grey[700] }}>
+                <ListItemIcon style={{ color: grey[700] }}>
                   {<PersonIcon />}
                 </ListItemIcon>
                 <ListItemText primary="General" />
               </ListItemButton>
             </ListItem>
             <ListItem>
-              <ListItemButton style={{ color: grey[500] }}>
-                <ListItemIcon style={{ color: grey[500] }}>
+              <ListItemButton style={{ color: grey[700] }}>
+                <ListItemIcon style={{ color: grey[700] }}>
                   {<LocalOfferIcon />}
                 </ListItemIcon>
                 <ListItemText primary="Labels" />
@@ -56,12 +56,12 @@ function Settings() {
                   component="h1"
                   variant="body1"
                   width={"200px"}
-                  color={grey[500]}
+                  color={grey[700]}
                 >
                   Full name
                 </Typography>
                 <Typography component="h1" variant="body1">
-                  {"Pedro Dell'Olio"}
+                  {"Test user"}
                 </Typography>
               </Box>
               <Divider />
@@ -70,12 +70,12 @@ function Settings() {
                   component="h1"
                   variant="body1"
                   width={"200px"}
-                  color={grey[500]}
+                  color={grey[700]}
                 >
                   Email address
                 </Typography>
                 <Typography component="h1" variant="body1">
-                  {"pedro@email.com"}
+                  {"test@gmail.com"}
                 </Typography>
               </Box>
             </Box>
@@ -92,7 +92,7 @@ function Settings() {
                   component="h1"
                   variant="body1"
                   width={"200px"}
-                  color={grey[500]}
+                  color={grey[700]}
                 >
                   First of the month
                 </Typography>
@@ -114,7 +114,7 @@ function Settings() {
                   <Typography
                     component="small"
                     variant="caption"
-                    color={grey[500]}
+                    color={grey[700]}
                   >
                     Define the starting day for monthly expenses and earnings.
                   </Typography>
