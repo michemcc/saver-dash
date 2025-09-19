@@ -1,13 +1,10 @@
 import datetime
 from abc import abstractmethod, ABC
-
 from pypdf import PdfReader
 from typing import Dict
 
-
 class InvoiceProcessingException(Exception):
     message = 'Invoice importing was not successful. Are you sure you chose the correct bank institution?'
-
 
 class PDFInvoiceImporter:
     def __init__(self, file_path, institution):
@@ -29,7 +26,6 @@ class PDFInvoiceImporter:
     def process_file(self):
         return self.processor().process_file(self.file_path,
                                              self.invoice_dict)
-
 
 class InvoiceProcessor(ABC):
     def process_file(self, file_path, invoice_dict):
@@ -56,7 +52,6 @@ class InvoiceProcessor(ABC):
     def generate_dict(self, text: str, invoice_dict: Dict):
         raise NotImplementedError()
 
-
 class SantanderInvoiceProcessor(InvoiceProcessor):
     def generate_dict(self, text, invoice_dict):
         chunks = text.split('\n')
@@ -71,7 +66,6 @@ class SantanderInvoiceProcessor(InvoiceProcessor):
 
         return invoice_dict
 
-
 class BancoDoBrasilInvoiceProcessor(InvoiceProcessor):
     def generate_dict(self, text, invoice_dict):
         chunks = text.split('\n')
@@ -83,7 +77,6 @@ class BancoDoBrasilInvoiceProcessor(InvoiceProcessor):
                 invoice_dict['date'] = chunk.split()[1]
 
         return invoice_dict
-
 
 class NubankInvoiceProcessor(InvoiceProcessor):
     def generate_dict(self, text, invoice_dict):

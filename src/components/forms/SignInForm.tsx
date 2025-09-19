@@ -105,7 +105,7 @@ function SignInForm() {
           component="p"
           textAlign="center"
         >
-          New to ? <Link to="/auth/sign-up">Sign up</Link>
+          New to Saver Dash? <Link to="/auth/sign-up">Sign up</Link>
         </Typography>
       </form>
     </Box>

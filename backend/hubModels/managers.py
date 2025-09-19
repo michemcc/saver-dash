@@ -1,14 +1,10 @@
 import datetime
 from datetime import timedelta, date
-
 from django.contrib.auth.base_user import BaseUserManager
 from django.apps import apps
-
 from django.db import models
 from django.db.models import QuerySet, Sum, F
-
 from django.db.models.functions import TruncMonth
-
 
 class HubUserManager(BaseUserManager):
     use_in_migrations = True
@@ -48,7 +44,6 @@ class HubUserManager(BaseUserManager):
             raise ValueError('Superuser must have is_superuser=True.')
 
         return self._create_user(first_name, last_name, email, password, **extra_fields)
-
 
 class TransactionsQueryset(models.QuerySet):
 
