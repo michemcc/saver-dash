@@ -39,7 +39,7 @@ export default function DrawerAppBar(props: Props) {
         fontWeight={600}
         sx={{ my: 2 }}
       >
-        saver-dash
+        Saver Dash
       </Typography>
       <Divider />
       <List>
@@ -89,9 +89,9 @@ export default function DrawerAppBar(props: Props) {
               variant="body1"
               component="h1"
               fontWeight={600}
-              sx={{ display: { xs: "none", sm: "block" } }}
+              sx={{ display: { xs: "none", sm: "block", marginRight: 28 } }}
             >
-              saver-dash
+              Saver Dash
             </Typography>
             <Divider
               orientation="vertical"
@@ -110,7 +110,7 @@ export default function DrawerAppBar(props: Props) {
                   to={item.path}
                   key={item.label}
                   style={{
-                    color: "#fff",
+                    color: "#4c4747ff",
                     marginRight: 28,
                     textDecoration: "none",
                     fontSize: "14px",

@@ -15,7 +15,16 @@ import LocalOfferIcon from "@mui/icons-material/LocalOffer";
 import { grey } from "@mui/material/colors";
 import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { useAuth } from "../hooks/useAuth";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
 function Settings() {
+
+  const { user } = useAuth();
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+
   return (
     <>
       {/* <Typography component="h1" variant="h4" fontWeight={600}>
@@ -61,7 +70,7 @@ function Settings() {
                   Full name
                 </Typography>
                 <Typography component="h1" variant="body1">
-                  {"Test user"}
+                  {user?.first_name} {user?.last_name}
                 </Typography>
               </Box>
               <Divider />
@@ -75,7 +84,7 @@ function Settings() {
                   Email address
                 </Typography>
                 <Typography component="h1" variant="body1">
-                  {"test@gmail.com"}
+                  {user?.email}
                 </Typography>
               </Box>
             </Box>
