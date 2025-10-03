@@ -1,6 +1,6 @@
 # saver-dash
 
-Saver Dash is a financial management web application, including personal transaction tracking, earnings and expense analysis, and savings plans. Written in node.js with a python django backend.
+Saver Dash is a financial management web application, featuring personal transaction tracking, earnings and expense analysis, and customized savings plans. Written in node.js with a python django backend.
 
 ## Features
 

@@ -83,7 +83,6 @@ class HubUser(AbstractBaseUser, PermissionsMixin):
         """
         send_mail(subject, message, from_email, [self.email], **kwargs)
 
-
 class Wallet(models.Model):
     user = models.ForeignKey(HubUser, on_delete=models.CASCADE)
     current_amount = models.DecimalField(decimal_places=2, max_digits=15)
@@ -137,7 +136,6 @@ class Wallet(models.Model):
     def get_labels(self) -> QuerySet['CustomLabel']:
         return self.labels.all()
 
-
 class WalletBasedModel(models.Model):
     wallet = models.ForeignKey(Wallet, on_delete=models.CASCADE, null=False)
 
@@ -154,7 +152,6 @@ class WalletBasedModel(models.Model):
         if not self.get_wallet() == wallet:
             return False
         return True
-
 
 class CustomLabel(WalletBasedModel):
     # OVERRIDE
@@ -195,7 +192,6 @@ class CustomLabel(WalletBasedModel):
 
         return label
 
-
 class TransactionRecurrency(models.Model):
     """
     Class that will store the amount of a time a certain transaction
@@ -220,7 +216,6 @@ class TransactionRecurrency(models.Model):
 
     def get_duration(self):
         return self.duration
-
 
 class Transaction(WalletBasedModel):
     TRANSACTION_TYPES = [
@@ -379,7 +374,6 @@ class Transaction(WalletBasedModel):
 
     def get_label(self):
         return self.label
-
 
 class SavingPlan(WalletBasedModel):
     wallet = models.ForeignKey(
