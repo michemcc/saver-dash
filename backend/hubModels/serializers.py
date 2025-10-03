@@ -1,8 +1,6 @@
 from rest_framework import serializers
 from .models import Transaction, SavingPlan, Wallet, CustomLabel
-
 from django.utils import timezone
-
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer, TokenRefreshSerializer
 from rest_framework_simplejwt.exceptions import InvalidToken
 
